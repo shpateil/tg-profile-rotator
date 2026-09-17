@@ -1,0 +1,16 @@
+[Unit]
+Description=telegram bio rotator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/tg-profile-rotator
+EnvironmentFile=%h/tg-profile-rotator/.env
+ExecStart=%h/tg-profile-rotator/.venv/bin/python %h/tg-profile-rotator/rotator.py
+Restart=on-failure
+RestartSec=30
+UMask=0077
+
+[Install]
+WantedBy=default.target
