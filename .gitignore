@@ -11,3 +11,4 @@ tdata/
 .venv/
 __pycache__/
 *.pyc
+.idx
